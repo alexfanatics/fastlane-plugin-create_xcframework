@@ -27,6 +27,7 @@ module Fastlane
 
       def xcarchive_framework_path(framework_index)
         framework_path = "#{xcarchive_path_for_destination(framework_index)}/Products/Library/Frameworks/#{framework}"
+        puts "framework path here: #{framework_path}"
         return framework_path if File.exist?(framework_path)
 
         UI.user_error!("▸ PRODUCT_NAME was misdefined: `#{product_name}`. Please, provide :product_name option")
